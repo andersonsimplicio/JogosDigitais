@@ -1,5 +1,9 @@
 # Tópicos Inovadores
 
+<p align="center">
+  <img src="img/programer.gif" alt="Imagem Ilustrativa">
+</p>
+
 Este repositório é destinado às aulas da Disciplina **Tópicos Inovadores**. Aqui, serão abordados diversos conteúdos avançados em algoritmos e estruturas de dados, com o objetivo de aprofundar o conhecimento dos alunos em técnicas de ordenação, análise de algoritmos, otimização, e mais. A seguir, a lista dos tópicos que serão cobertos ao longo do curso:
 
 ## Conteúdos Abordados
@@ -74,11 +78,6 @@ Este repositório é destinado às aulas da Disciplina **Tópicos Inovadores**. 
 ## Como Utilizar este Repositório
 
 Cada aula terá uma pasta dedicada com material didático, exemplos de código, e exercícios práticos. Certifique-se de acompanhar regularmente as atualizações e realizar os exercícios propostos para melhor compreensão dos conteúdos abordados.
-
-## Contribuições
-
-Contribuições são bem-vindas! Se você deseja contribuir com exemplos adicionais, correções ou melhorias no material, sinta-se à vontade para abrir um pull request.
-
 ---
 
 Bons estudos!

@@ -1,0 +1,63 @@
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter Notebook config files
+.jupyter/
+.ipython/
+Aula01/.ipynb_checkpoints/
+# Ignore data files
+*.csv
+*.tsv
+*.json
+*.xml
+*.h5
+*.sqlite
+*.db
+
+# Ignore virtual environment directories
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.log
+*.swp
+*.bak
+*.pid
+*.seed
+*.pid.lock
+
+# Ignore specific editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore output files
+*.out
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+
+# Ignore Jupyter Notebook custom kernel
+.kernel/

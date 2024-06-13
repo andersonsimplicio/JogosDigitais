@@ -77,7 +77,7 @@ Este repositório é destinado às aulas da Disciplina **Tópicos Inovadores**. 
 
 ## Como Utilizar este Repositório
 
-Cada aula terá uma pasta dedicada com material didático, exemplos de código, e exercícios práticos. Certifique-se de acompanhar regularmente as atualizações e realizar os exercícios propostos para melhor compreensão dos conteúdos abordados.
+<p>Cada aula terá uma pasta dedicada com material didático, exemplos de código, e exercícios práticos. Certifique-se de acompanhar regularmente as atualizações e realizar os exercícios propostos para melhor compreensão dos conteúdos abordados.</p>
 ---
 
 Bons estudos!

@@ -1,40 +1,26 @@
-def particionamento_hoare(array, inicio, fim):
-    # Escolhe o pivô como o primeiro elemento
-    pivô = array[inicio]
-    
-    # Inicializa os ponteiros
-    i = inicio - 1
-    j = fim + 1
-    
+
+def particionar_Hoare(v:[]):
+    j= len(v)-1
+    pivot = 0
+    i = 1
     while True:
-        # Move o ponteiro i para a direita até encontrar um valor maior ou igual ao pivô
-        while True:
-            i += 1
-            if array[i] >= pivô:
-                break
-        
-        # Move o ponteiro j para a esquerda até encontrar um valor menor ou igual ao pivô
-        while True:
-            j -= 1
-            if array[j] <= pivô:
-                break
-        
-        # Se os ponteiros se cruzarem, retorne j
-        if i >= j:
+      
+        while v[j] <= v[pivot]:
+            j-=1
+
+        while v[i] >= v[pivot]:
+            i+=1
+
+        if i < j:
+            print("troca")
+            v[i], v[j] = v[j], v[i]
+        else:
+            v[pivot], v[j] = v[j], v[pivot]
             return j
-        
-        # Caso contrário, troque os elementos de array[i] e array[j]
-        # Armazena temporariamente o valor de array[i]
-        aux = array[i]
-        # Coloca o valor de array[j] na posição array[i]
-        array[i] = array[j]
-        # Coloca o valor temporário (que era de array[i]) na posição array[j]
-        array[j] = aux 
-        
+
 if __name__=="__main__":
-    array = [8, 3, 6, 1, 7, 2, 5]
-    inicio = 0
-    fim = len(array)-1
+    #array = [3,8,7,10,0,23,2,1,77,7]
+    array = [13, 19, 9, 5, 12, 8, 7, 4, 11, 2, 6, 21]
     print(array)
-    print(particionamento_hoare(array,inicio,fim))
+    print(particionar_Hoare(array))
     print(array)

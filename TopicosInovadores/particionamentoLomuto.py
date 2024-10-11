@@ -1,12 +1,15 @@
-def particionamento_lomuto(v):
-    i = j = 0
-    pivot = len(v)-1
-    for j in range(len(v)-1):
-        if v[j] <= v[pivot]: 
-            v[i],v[j] = v[j],v[i]
+def particionar_lomuto(v,esq,dir):
+    pivot = v[esq]
+    i = esq
+    for j in range(esq+1,dir):
+        if v[j] <= pivot: 
             i+=1
-    v[pivot],v[i] = v[i],v[pivot]
+            v[i],v[j] = v[j],v[i]
+           
+    v[esq], v[i] = v[i], v[esq]
+
     return i
+
 
 
 if __name__=="__main__":

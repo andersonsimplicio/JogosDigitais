@@ -1,21 +1,19 @@
-
-def particionar_Hoare(v:[]):
-    j= len(v)-1
-    pivot = 0
+def particionar_Hoare(v:list,esq:int,dir:int):
+    j= dir - 1
+    pivot = esq
     i = 1
     while True:
       
-        while v[j] <= v[pivot]:
+        while v[j] >= v[pivot] and j > 0:
             j-=1
 
-        while v[i] >= v[pivot]:
+        while v[i] <= v[pivot] and i < len(v):
             i+=1
 
         if i < j:
-            print("troca")
             v[i], v[j] = v[j], v[i]
         else:
-            v[pivot], v[j] = v[j], v[pivot]
+            #v[pivot], v[j] = v[j], v[pivot]
             return j
 
 if __name__=="__main__":

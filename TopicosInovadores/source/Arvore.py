@@ -1,61 +1,73 @@
 class Node:
-    def __init__(self, key):
-        self.left = None
-        self.right = None
-        self.val = key
+    def __init__(self,data:int) -> None:
+        self.data = data
+        self.no_direito:Node = None
+        self.no_esquerdo:Node = None
 
-class BinarySearchTree:
+def Em_ordem(nodo:Node)->None:
+    
+    if nodo is None:
+       return 
+    else:
+        Em_ordem(nodo.no_esquerdo)
+        print(nodo.data)
+        Em_ordem(nodo.no_direito)
+    
+class Tree: 
+
     def __init__(self):
-        self.root = None
+        self.raiz:Node = None
 
-    def insert(self, key):
-        if self.root is None:
-            self.root = Node(key)
-        else:
-            self._insert_recursive(self.root, key)
-
-    def _insert_recursive(self, current_node, key):
-        if key < current_node.val:
-            if current_node.left is None:
-                current_node.left = Node(key)
+    def insercao(self,valor:int)->None:
+        nodo = Node(valor)
+        if self.raiz is None:
+            self.raiz = nodo
+        
+        nodo_corrente = self.raiz
+        saida = True    
+        while saida:
+            print(nodo_corrente.data)
+            print(nodo.data)
+            if nodo.data < nodo_corrente.data:
+                if nodo_corrente.no_esquerdo is None:
+                    nodo_corrente.no_esquerdo = nodo
+                    saida = False
+                else:
+                    nodo_corrente = nodo_corrente.no_esquerdo
             else:
-                self._insert_recursive(current_node.left, key)
-        else:
-            if current_node.right is None:
-                current_node.right = Node(key)
+               if nodo_corrente.no_direito is None:
+                    nodo_corrente.no_direito = nodo
+                    saida = False
+               else:
+                    nodo_corrente = nodo_corrente.no_direito
+       
+        nodo_corrente = nodo
+    
+    def search(self,value:int)->int | None:
+        pointer = self.raiz
+        while pointer is not None:
+            if pointer.data == value:
+                return pointer.data
+            elif pointer.data > value:
+                pointer = pointer.no_direito
             else:
-                self._insert_recursive(current_node.right, key)
-
-    def search(self, key):
-        return self._search_recursive(self.root, key)
-
-    def _search_recursive(self, current_node, key):
-        if current_node is None or current_node.val == key:
-            return current_node
-        if key < current_node.val:
-            return self._search_recursive(current_node.left, key)
-        return self._search_recursive(current_node.right, key)
-
-    def inorder_traversal(self):
-        return self._inorder_traversal_recursive(self.root)
-
-    def _inorder_traversal_recursive(self, current_node):
-        res = []
-        if current_node:
-            res = self._inorder_traversal_recursive(current_node.left)
-            res.append(current_node.val)
-            res = res + self._inorder_traversal_recursive(current_node.right)
-        return res
-
-# Exemplo de uso
+                pointer = pointer.no_direito
+        return None
+    
 if __name__ == "__main__":
-    bst = BinarySearchTree()
-    bst.insert(7)
-    bst.insert(3)
-    bst.insert(9)
-    bst.insert(1)
-    bst.insert(5)
+   
+    bst = Tree()
+    bst.insercao(7)
+    bst.insercao(3)
+    bst.insercao(9)
+    bst.insercao(1)
+    bst.insercao(5)
 
-    print("Inorder Traversal:", bst.inorder_traversal())
-    print("Buscar 5:", bst.search(5) is not None)
-    print("Buscar 10:", bst.search(10) is not None)
+    print(f"Em ordem: raiz {bst.raiz.data}",)
+    Em_ordem(bst.raiz)
+    print(f"Buscar 7: {bst.search(7)} {' encontrado!' if bst.search(7) is not None else ' não encotrado!'}" )
+    print(f"Buscar 3: {bst.search(3)} {' encontrado!' if bst.search(3) is not None else ' não encotrado!'}" )
+    print(f"Buscar 9: {bst.search(9)} {' encontrado!' if bst.search(9) is not None else ' não encotrado!'}" )
+    print(f"Buscar 1: {bst.search(1)} {' encontrado!' if bst.search(1) is not None else ' não encotrado!'}" )
+    print(f"Buscar 5: {bst.search(5)} {' encontrado!' if bst.search(5) is not None else ' não encotrado!'}" )
+   
